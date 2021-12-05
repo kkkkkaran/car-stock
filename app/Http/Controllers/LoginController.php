@@ -8,17 +8,12 @@ class LoginController extends Controller
 {
     public function login(Request $request){
 
-        $validated = $this->validate($request,[
+        $validatedCredentials = $this->validate($request,[
             'email'=>'required|email|unique:users',
             'password'=>'required|min:8',
         ]);
 
-        $credentials=[
-            'email' => $validated['email'],
-            'password' => $validated['password'],
-        ];
-
-        if(auth()->attempt($credentials)){
+        if(auth()->attempt($validatedCredentials)){
             $token= auth()->user()->createToken()->accessToken;
 
             return response()->json(['token' => $token], 200);

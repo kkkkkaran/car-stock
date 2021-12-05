@@ -53,6 +53,4 @@ class FetchCarStockTest extends TestCase
     {
         $this->get('api/car-stocks')->assertRedirect();
     }
-
-
 }
