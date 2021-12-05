@@ -8,7 +8,7 @@ use Tests\TestCase;
 class EagerLoadManufacturerTest extends TestCase
 {
     /** @test */
-    public function it_fetches_manufactuer_details_with_car()
+    public function it_fetches_manufacturer_details_with_car()
     {
         Car::factory()->count(1)->create();
 

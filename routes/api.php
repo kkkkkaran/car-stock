@@ -15,5 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/login', [LoginController::class, 'login']);
-Route::middleware('auth:api')->get('/car-stocks', [CarStockController::class, 'index']);
+Route::middleware('auth:sanctum')->get('/car-stocks', [CarStockController::class, 'index']);

@@ -6,6 +6,7 @@ use App\Models\Car;
 use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Laravel\Passport\Passport;
+use Laravel\Sanctum\Sanctum;
 use Tests\TestCase;
 
 class FetchCarStockTest extends TestCase
@@ -33,7 +34,7 @@ class FetchCarStockTest extends TestCase
     /** @test */
     public function allows_authenticated_user_to_view_all_cars_in_stock()
     {
-        Passport::actingAs($this->user, ['view-stock']);
+        Sanctum::actingAs($this->user);
 
         $response = $this->get('api/car-stocks');
 

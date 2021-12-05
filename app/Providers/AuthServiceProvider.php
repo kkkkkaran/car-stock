@@ -25,22 +25,5 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
-        Passport::hashClientSecrets();
-
-        if (! $this->app->routesAreCached()) {
-            Passport::routes();
-        }
-
-        Passport::tokensCan([
-            'view-stock' => 'View Car Stocks',
-        ]);
-
-        Passport::setDefaultScope([
-            'view-stock',
-        ]);
-
-        Passport::tokensExpireIn(now()->addDays(5));
-        Passport::refreshTokensExpireIn(now()->addDays(10));
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCarStocksTable extends Migration
+class CreateCarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,7 +19,6 @@ class CreateCarStocksTable extends Migration
             $table->string('model');
             $table->string('year');
             $table->smallInteger('manufacturer_id');
-            $table->foreign('manufacturer_id')->references('id')->on('car_manufacturers');
             $table->smallInteger('stock_level')->default(0);
         });
     }
