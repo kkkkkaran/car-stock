@@ -32,6 +32,14 @@ class AuthServiceProvider extends ServiceProvider
             Passport::routes();
         }
 
+        Passport::tokensCan([
+            'view-stock' => 'View Car Stocks',
+        ]);
+
+        Passport::setDefaultScope([
+            'view-stock',
+        ]);
+
         Passport::tokensExpireIn(now()->addDays(5));
         Passport::refreshTokensExpireIn(now()->addDays(10));
     }

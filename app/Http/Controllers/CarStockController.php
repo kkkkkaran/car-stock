@@ -18,6 +18,6 @@ class CarStockController extends Controller
      */
     public function index()
     {
-        return CarStockResource::collection(Car::with('manufacturer')->all());
+        return CarStockResource::collection(Car::all());
     }
 }

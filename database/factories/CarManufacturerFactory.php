@@ -13,8 +13,17 @@ class CarManufacturerFactory extends Factory
      */
     public function definition()
     {
+        $manufacturers = [
+            'Alfa Romeo',
+            'Maserati',
+            'Fiat',
+            'Chrysler',
+            'Jeep',
+            'Ferrari'
+        ];
+
         return [
-            //
+            'name' => $manufacturers[array_rand($manufacturers)]
         ];
     }
 }

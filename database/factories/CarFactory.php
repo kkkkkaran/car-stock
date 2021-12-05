@@ -17,7 +17,8 @@ class CarFactory extends Factory
         return [
             'model' => $this->faker->name(),
             'year' => $this->faker->year(),
-            'manufacturer_id' => CarManufacturer::factory()->create()
+            'manufacturer_id' => CarManufacturer::factory()->create(),
+            'stock_level' => $this->faker->numberBetween(0,1000)
         ];
     }
 }

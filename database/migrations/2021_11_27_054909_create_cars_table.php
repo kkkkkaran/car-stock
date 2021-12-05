@@ -20,6 +20,7 @@ class CreateCarStocksTable extends Migration
             $table->string('year');
             $table->smallInteger('manufacturer_id');
             $table->foreign('manufacturer_id')->references('id')->on('car_manufacturers');
+            $table->smallInteger('stock_level')->default(0);
         });
     }
 
