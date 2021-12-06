@@ -85,7 +85,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     ```bash
     cd public
     ```
-6. Create secure links to serve the api and auth routes using valet by running:
+6. Create secure links to valet:
     ```bash
     valet link
     ```
